@@ -8,27 +8,70 @@
 </head>
 <body>
 
-    <header class="container">
-        <h1>{{ hq.titulo }}</h1>
-        <p class="sinopse">{{ hq.descricao }}</p>
-    </header>
+<header class="container">
+    <h1>{{ hq.titulo }}</h1>
+    <p class="sinopse">{{ hq.descricao }}</p>
+</header>
 
-    <main class="flipbook-section">
-        <div class="iframe-wrapper">
-            <iframe
+<main class="flipbook-section">
+    <div class="iframe-wrapper">
+        <iframe
                 allowfullscreen="allowfullscreen"
                 allow="clipboard-write"
                 scrolling="no"
                 class="fp-iframe"
                 src="https://heyzine.com/flip-book/1c4ae1cb5e.html"
                 style="border: none; width: 100%; height: 600px;">
-            </iframe>
-        </div>
-    </main>
+        </iframe>
+    </div>
+</main>
 
-    <footer class="container">
-        <p>&copy; 2026 - Site por {{ hq.autor }}</p>
-    </footer>
+<section class="container atividades-section">
+    <h2>Hora da Atividade!</h2>
+    <p>Ajude Cacau e Betty a chegarem no campus completando os desafios!</p>
+
+    <div class="atividade-card" id="cruzadinha">
+        <h3>Palavras Cruzadas</h3>
+        <div class="cw-dicas">
+            <div>
+                <strong>Horizontais (→):</strong>
+                <p>1 - QUADRA DE AREIA EM SÃO BERNARDO DO CAMPO (6)</p>
+                <p>3 - CIDADE DO CAMPUS DO PISO VERMELHO (11)</p>
+                <p>5 - SIGLA DO CURSO DO CACAU (3)</p>
+                <p>7 - CURSO ESPECÍFICO DA BETTY (8)</p>
+            </div>
+            <div>
+                <strong>Verticais (↓):</strong>
+                <p>2 - TRANSPORTE GRATUITO ENTRE AS UNIVERSIDADES (7)</p>
+                <p>4 - SIGLA DA UNIVERSIDADE FEDERAL DO ABC (5)</p>
+                <p>6 - NOME DO BLOCO QUE O CACAU TERÁ AULA (5)</p>
+                <p>8 - CURSO DE INGRESSO MAIS RECENTE DA UFABC (5)</p>
+            </div>
+        </div>
+
+        <div id="crossword-grid" class="cw-grid"></div>
+
+        <button id="btn-validar-cruzadinha" class="btn-hq">Validar Cruzadinha</button>
+        <p id="crossword-msg" class="msg-sucesso" style="display:none;">🎉 Incrível! Você completou tudo!</p>
+    </div>
+
+    <div class="atividade-card" id="caca-palavras">
+        <h3>Caça-Palavras</h3>
+        <p>Clique nas letras para formar a palavra (elas devem estar juntas em linha reta ou diagonal).</p>
+        <div class="caca-palavras-container">
+            <div id="wordsearch-grid" class="ws-grid-12x20"></div>
+            <ul id="wordsearch-list"></ul>
+        </div>
+        <button id="btn-validar-palavra" class="btn-hq">Validar Seleção</button>
+        <p id="ws-msg" class="msg-sucesso" style="display:none;">🎉 Incrível! Você achou todas as palavras!</p>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/atividades.js') }}"></script>
+
+<footer class="container">
+    <p>&copy; 2026 - Site por {{ hq.autor }}</p>
+</footer>
 
 </body>
 </html>

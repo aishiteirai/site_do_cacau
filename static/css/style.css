@@ -24,3 +24,137 @@ h1 {
     padding: 10px;
     transform: rotate(-1deg); /* Leve inclinação para dar dinamismo */
 }
+
+/* --- ESTILOS DAS ATIVIDADES --- */
+.atividades-section {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 5px solid #000;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px #CC0000;
+}
+
+.atividade-card {
+    background: #fff;
+    border: 4px solid #000;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+/* Cruzadinha em Grade */
+.cw-dicas {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+/* Cruzadinha em Grade 12x13 (Layout Perfeito e Corrigido) */
+.cw-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 38px); /* 12 Colunas */
+    grid-template-rows: repeat(13, 38px);    /* 13 Linhas */
+    gap: 0;
+    justify-content: center;
+    margin: 30px auto;
+    background: transparent;
+    width: max-content;
+    position: relative;
+}
+
+.cw-cell {
+    width: 38px;
+    height: 38px;
+    position: relative;
+}
+
+.cw-input-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 2px solid #000;
+    background: #fff;
+    border-radius: 6px;
+}
+
+.cw-numero {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 0.70rem;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive;
+    color: #000;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 4px;
+    padding: 0 3px;
+    z-index: 5;
+    white-space: nowrap;
+}
+
+.cw-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Comic Sans MS', cursive;
+    text-transform: uppercase;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.cw-input:focus { background: #FFD700; }
+.cw-input.correct { background: #90EE90; color: #006400; font-weight: bold; pointer-events: none;}
+.cw-input.wrong { background: #FFB6C1; color: #8B0000; }
+
+.cw-black-box {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border: 2px solid #000;
+    border-radius: 6px;
+}
+
+/* Caça-Palavras 12x20 */
+.caca-palavras-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+.ws-grid-12x20 {
+    display: grid;
+    grid-template-columns: repeat(20, 30px);
+    gap: 2px;
+    background: #000;
+    padding: 2px;
+    border: 4px solid #000;
+}
+.ws-cell {
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+.ws-cell.selected { background: #FFD700; }
+.ws-cell.found { background: #90EE90; color: #000; pointer-events: none; }
+#wordsearch-list li.found { text-decoration: line-through; color: green; }
+
+.btn-hq {
+    background: #000; color: #fff; border: none; padding: 10px 20px;
+    font-family: inherit; font-size: 1.2rem; cursor: pointer; border-radius: 8px;
+}
+.btn-hq:hover { background: #CC0000; }
+.msg-sucesso { color: green; font-weight: bold; font-size: 1.2rem; text-align: center; }
