@@ -158,3 +158,51 @@ h1 {
 }
 .btn-hq:hover { background: #CC0000; }
 .msg-sucesso { color: green; font-weight: bold; font-size: 1.2rem; text-align: center; }
+
+/* =========================================
+   REGRAS PARA DISPOSITIVOS MÓVEIS (RESPONSIVIDADE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Coloca as dicas da cruzadinha uma embaixo da outra */
+    .cw-dicas {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Permite rolar a cruzadinha na horizontal se for maior que a tela */
+    .cw-grid {
+        max-width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start; /* Evita cortar a borda esquerda */
+        padding-bottom: 10px; /* Espaço para a barra de rolagem */
+        margin: 15px 0;
+    }
+
+    /* Permite rolar o caça-palavras na horizontal */
+    .caca-palavras-container {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    /* Garante que a grade do caça-palavras não amasse as letras */
+    .ws-grid-12x20 {
+        min-width: max-content;
+    }
+
+    /* Reduz um pouco os espaços externos nas laterais */
+    .atividades-section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    header, .flipbook-section {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
