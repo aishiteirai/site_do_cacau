@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ hq.titulo }} - HQ Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="container">
+        <h1>{{ hq.titulo }}</h1>
+        <p class="sinopse">{{ hq.descricao }}</p>
+    </header>
+
+    <main class="flipbook-section">
+        <div class="iframe-wrapper">
+            <iframe
+                allowfullscreen="allowfullscreen"
+                allow="clipboard-write"
+                scrolling="no"
+                class="fp-iframe"
+                src="https://heyzine.com/flip-book/1c4ae1cb5e.html"
+                style="border: none; width: 100%; height: 600px;">
+            </iframe>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2026 - Site por {{ hq.autor }}</p>
+    </footer>
+
+</body>
+</html>
