@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ hq.titulo }} - HQ Digital</title>
+    <title>Cacau em: Conhecendo a UFABC - HQ Digital</title>
+    <!-- Adicionado o ícone do site -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/cacau.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
+<!-- Imagem do Mascote Flutuante -->
+<img src="../static/images/cacau.png" alt="Mascote Cacau" class="mascote-cacau" title="Oi! Eu sou o Cacau!">
+
 <header class="container">
-    <h1>{{ hq.titulo }}</h1>
-    <p class="sinopse">{{ hq.descricao }}</p>
+    <div class="header-logo">
+        <img src="../static/images/logo_cacau.png" alt="Cacau Logo">
+    </div>
+    <h2 class="subtitle">Em... Conhecendo a UFABC!</h2>
+    <div class="header-text">
+        <p class="sinopse">Conheça o Cacau e a Betty e descubra como a Universidade Federal do ABC (UFABC) funciona nesta aventura muito divertida!</p>
+    </div>
 </header>
 
-<main class="flipbook-section">
+<main class="container flipbook-section">
     <div class="iframe-wrapper">
         <iframe allowfullscreen="allowfullscreen"
                 allow="clipboard-write"
                 scrolling="no"
                 class="fp-iframe"
-                style="border: 1px solid lightgray; width: 100%; height: 600px;"
+                style="border: none; width: 100%; height: 600px; border-radius: 5px;"
                 src="https://heyzine.com/flip-book/af09c495fc.html">
         </iframe>
     </div>
 </main>
 
 <section class="container atividades-section">
-    <h2>Hora da Atividade!</h2>
-    <p>Ajude Cacau e Betty a chegarem no campus completando os desafios!</p>
+    <h2>💥 Hora da Atividade! 💥</h2>
+    <p style="text-align: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 30px;">
+        Ajude Cacau e Betty a chegarem no campus completando os desafios!
+    </p>
 
     <div class="atividade-card" id="cruzadinha">
         <h3>Palavras Cruzadas</h3>
@@ -60,7 +72,9 @@
         <p>Clique nas letras para formar a palavra (elas devem estar juntas em linha reta ou diagonal).</p>
         <div class="caca-palavras-container">
             <div id="wordsearch-grid" class="ws-grid-12x20"></div>
-            <ul id="wordsearch-list"></ul>
+            <div>
+                <ul id="wordsearch-list"></ul>
+            </div>
         </div>
         <button id="btn-validar-palavra" class="btn-hq">Validar Seleção</button>
         <p id="ws-msg" class="msg-sucesso" style="display:none;">🎉 Incrível! Você achou todas as palavras!</p>
@@ -70,8 +84,7 @@
 <script src="{{ url_for('static', filename='js/atividades.js') }}"></script>
 
 <footer class="container">
-    <p>&copy; 2026 - Site por {{ hq.autor }}</p>
+    <p>&copy; 2026 - Site por Ryan Corazza e Pâmela Campos</p>
 </footer>
-
 </body>
 </html>
